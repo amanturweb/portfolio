@@ -1,0 +1,304 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, #010314, #020009d6);
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #1e1f22;
+}
+
+header .name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+header .list {
+    display: flex;
+    list-style: none;
+}
+
+header .list li {
+    margin-left: 20px;
+}
+
+header .list li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+header .list li a:hover {
+    color: #abafb4;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Section */
+main {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fade-In Animation */
+.about-me,
+.projects,
+.technologies {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* About Me Content */
+.about-me {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 90vh;
+    padding: 20px;
+    background: transparent;
+}
+
+.about-me .content {
+    color: rgba(50, 159, 243, 0.8);
+    text-align: left;
+    max-width: 600px;
+    margin-left: 20px;
+}
+
+.about-me h1 {
+    font-size: 36px;
+    color: #7d7878;
+}
+
+.about-me p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+/* Projects Section */
+.projects {
+    height: 30%;
+    padding: 50px 20px;
+    background-color: #181327d6;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.projects h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.project-item {
+    height: auto;
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+}
+
+/* Technologies Section */
+.technologies {
+    padding: 50px 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.technologies h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.tech-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tech-list li {
+    font-size: 18px;
+}
+
+.tech-list a {
+    text-decoration: none;
+    color: #bbb6b6;
+    transition: color 0.3s ease;
+}
+
+.tech-list a:hover {
+    color: #0471f7;
+}
+
+/* Footer Section */
+.contact-footer {
+    background-color: #333;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-list li {
+    display: inline-block;
+}
+
+.contact-list a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: #1da1f2;
+}
+
+.location {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+
+@media (max-width: 524px) {
+
+    /* Header: stack items vertically */
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    header .name {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    header .list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    header .list li {
+        margin: 10px 0;
+    }
+
+    header .list li a {
+        font-size: 18px;
+    }
+
+    /* Main Section: Stack content vertically */
+    main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .about-me .content {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .about-me h1 {
+        font-size: 28px;
+    }
+
+    .about-me p {
+        font-size: 16px;
+    }
+
+    /* Projects Section: Stack images vertically */
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-item img {
+        height: auto;
+    }
+
+    /* Technologies Section: Center and adjust font sizes */
+    .technologies {
+        padding: 20px;
+    }
+
+    .technologies h2 {
+        font-size: 28px;
+    }
+
+    .tech-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .tech-list li {
+        font-size: 16px;
+    }
+}
