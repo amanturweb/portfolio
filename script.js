@@ -34,3 +34,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+
+let currentRepoUrl = '';
+
+function showModal(repoUrl) {
+    currentRepoUrl = repoUrl; // Set the current repository URL
+    document.getElementById('details-button').onclick = function() {
+        window.open(currentRepoUrl, '_blank'); // Open in new tab
+    };
+    document.getElementById('modal').style.display = "block"; // Show the modal
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = "none"; // Hide the modal
+}
+
+// Close modal when clicking outside of the modal content
+window.onclick = function(event) {
+    if (event.target == document.getElementById('modal')) {
+        closeModal();
+    }
+};

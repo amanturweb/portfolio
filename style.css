@@ -88,8 +88,12 @@ main {
 .about-me .content {
     color: rgba(50, 159, 243, 0.8);
     text-align: left;
-    max-width: 600px;
-    margin-left: 20px;
+    width: calc(100% - 40px);
+    /* Full width minus 20px margin on each side */
+    margin: 0 20px;
+    /* 20px margin on left and right */
+    box-sizing: border-box;
+    /* Include padding and border in element's total width */
 }
 
 .about-me h1 {
@@ -212,8 +216,62 @@ main {
     font-size: 16px;
 }
 
+/* Modal css */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
 
-@media (max-width: 524px) {
+.modal-content {
+    background-color: #f1f3f5;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 100px;
+    /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #fa0505;
+    /* Red color */
+    font-size: 15px;
+    /* Font size */
+    /* Bold text */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    margin-top: 20px;
+    /* Space above the Close text */
+    text-align: center;
+    /* Center the text */
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(247, 3, 3);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 390px) {
 
     /* Header: stack items vertically */
     header {
@@ -223,14 +281,20 @@ main {
     }
 
     header .name {
-        margin-bottom: 10px;
-        font-size: 24px;
+        margin-bottom: 40px;
+        font-size: 30px;
+    }
+
+    .nameSurname {
+        font-size: 12px;
+        display: inline;
     }
 
     header .list {
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: white;
         padding: 0;
         margin: 0;
     }
@@ -240,16 +304,22 @@ main {
     }
 
     header .list li a {
-        font-size: 18px;
+        font-size: 30px;
+    }
+
+    .list:hover {
+        background-color: #0471f7;
     }
 
     /* Main Section: Stack content vertically */
     main {
         flex-direction: column;
-        text-align: center;
+        text-align: start;
     }
 
+    /* About Me Section: Center and adjust layout */
     .about-me {
+        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -257,48 +327,81 @@ main {
     }
 
     .about-me .content {
-        margin-left: 0;
-        max-width: 100%;
+        margin: 0 20px;
+        /* Added margins on both sides */
+        max-width: 90%;
+        /* Ensure the content is responsive */
     }
 
     .about-me h1 {
         font-size: 28px;
+        /* Adjust font size */
     }
 
     .about-me p {
         font-size: 16px;
+        /* Adjust paragraph font size */
     }
 
     /* Projects Section: Stack images vertically */
     .projects {
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .project-gallery {
+        display: grid;
+        /* Use grid for layout */
         grid-template-columns: 1fr;
+        /* One column on small screens */
+        gap: 10px;
+        /* Space between images */
     }
 
     .project-item img {
+        width: 100%;
+        /* Make images responsive */
         height: auto;
+        /* Maintain aspect ratio */
     }
 
-    /* Technologies Section: Center and adjust font sizes */
+    /* Technologies Section: Stack items vertically */
     .technologies {
         padding: 20px;
+        text-align: center;
+        /* Center text */
     }
 
     .technologies h2 {
         font-size: 28px;
+        /* Adjust title size */
     }
 
     .tech-list {
+        display: flex;
         flex-direction: column;
+        /* Stack items vertically */
         align-items: center;
         gap: 10px;
+        /* Space between items */
     }
 
     .tech-list li {
         font-size: 16px;
+        /* Adjust font size */
+    }
+
+    /* Contact Links: Inline display */
+    .contact-links {
+        display: flex;
+        /* Inline links */
+        flex-direction: row;
+        justify-content: center;
+        /* Center links */
+        gap: 10px;
+        /* Space between links */
+        margin-top: 20px;
+        /* Space above links */
     }
 }

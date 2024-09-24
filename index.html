@@ -32,12 +32,22 @@
     <main id="home">
         <section class="about-me">
             <div class="content">
-                <h1>Amantur Kubanychbekov</h1>
+                <h1 class="nameSurname">Amantur Kubanychbekov</h1>
                 <p>
-                    Dynamic Frontend Developer with hands-on experience building and optimizing modern web apps. Skilled
-                    in creating responsive, high-quality UIs using JavaScript (ES6+), React, and Angular. A strong
-                    communicator, collaborative team player, and passionate about writing clean, maintainable code while
-                    continuously staying updated on new technologies.
+                    I am a motivated Frontend Developer and recent graduate eager to grow and make an impact in the tech
+                    industry. With a solid foundation in HTML, CSS (Sass), and JavaScript (ES6/TypeScript), I have
+                    successfully built and optimized responsive web applications using React and Node.js. I thrive in
+                    collaborative environments and am committed to writing clean code while continuously learning and
+                    improving. <br>
+
+                    Dynamic Frontend Developer with hands-on experience in building and optimizing modern web apps, I am
+                    skilled in creating responsive, high-quality UIs using JavaScript (ES6+), React, and Angular. My
+                    background in sales has provided me with a unique perspective, where I streamlined processes and
+                    analyzed customer data to support team goals. This combination of technical skills and business
+                    insight fuels my passion for creating user-friendly, high-performance web interfaces. <br>
+
+                    A strong communicator and collaborative team player, I am passionate about writing clean,
+                    maintainable code while continuously staying updated on new technologies. <br>
                 </p>
             </div>
         </section>
@@ -47,17 +57,34 @@
     <section class="projects" id="projects">
         <h2>Projects</h2>
         <div class="project-gallery">
-            <div class="project-item">
+            <div class="project-item" onclick="showModal('https://github.com/amanturweb/gmail-clone')">
                 <img src="img/gmailClone.png" alt="Project 1">
             </div>
-            <div class="project-item">
-                <img src="img/toDoList.jpg" alt="Project 2">
-            </div>
-            <div class="project-item">
+            <div class="project-item" onclick="showModal('https://github.com/amanturweb/Shopping-Cart---React')">
                 <img src="img/shopping-cart.png" alt="Project 3">
+            </div>
+            <div class="project-item" onclick="showModal('https://github.com/amanturweb/Windows-Desktop')">
+                <img src="img/windows.png" alt="Project 4">
+            </div>
+            <div class="project-item" onclick="showModal('https://github.com/amanturweb/Dom-Countries-Project')">
+                <img src="img/countries.png" alt="Project 5">
+            </div>
+            <div class="project-item" onclick="showModal('https://github.com/amanturweb/simple-quiz-project')">
+                <img src="img/quizProject.png" alt="Project 6">
+            </div>
+            <div class="project-item" onclick="showModal('https://github.com/amanturweb/Expense_Tracker')">
+                <img src="img/expenseTrack.png" alt="Project 6">
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <button id="details-button" onclick="">Link</button>
             </div>
         </div>
     </section>
+
 
     <!-- Technologies Section -->
     <section class="technologies" id="technologies">
